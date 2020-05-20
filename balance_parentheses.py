@@ -3,10 +3,11 @@ def balance_parentheses(parentheses):
     if (len(parentheses)%2 != 0):
         return False
     open_parenthese = ('(','{','[')
+    closing_parentheses = (')','}',']')
     for i in parentheses:
         if i in open_parenthese:
             stack.append(i)
-        else:
+        elif i in closing_parentheses:
             top = stack.pop()
             if i == ')':
                 if top != '(':
@@ -25,5 +26,5 @@ def balance_parentheses(parentheses):
     
     
     
-print(balance_parentheses('[(])') )
+print(balance_parentheses('a[(b])') )
 print(balance_parentheses('[()]{}{[()()]()}'))
